@@ -5,7 +5,7 @@
 
 <br/>
 <br/>
-Open your terminal:
+Open your project terminal:
 <br/>
 
 pip install git+https://github.com/MrMT-95/geopandas_installer
