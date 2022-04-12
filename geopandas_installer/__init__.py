@@ -53,6 +53,7 @@ def download_geopandas_dependencies(python_version, windows_bit_version, temp_di
 
     for file_name in dependencies:
         download_path = os.path.join(temp_dir, file_name)
+        print("Downloading: " + file_name)
         file_url = website_url + file_name
 
         r = requests.get(file_url, headers=headers)
@@ -60,13 +61,13 @@ def download_geopandas_dependencies(python_version, windows_bit_version, temp_di
 
 
 def install_geopandas():
-    os.system("pip install geopandas")
+    os.system("python -m pip install geopandas")
 
 
 def install_wheels(temp_dir):
     pip_install_table = []
     for file in os.listdir(temp_dir):
-        pip_install_table.append("pip install " + os.path.join(temp_dir, file))
+        pip_install_table.append("python -m pip install " + os.path.join(temp_dir, file))
 
     dependencies_names = ["GDAL", "pyproj", "Fiona", "Shapely"]
     for dependency in dependencies_names:
