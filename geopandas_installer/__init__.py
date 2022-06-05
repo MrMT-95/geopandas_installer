@@ -69,7 +69,7 @@ def install_wheels(temp_dir):
     for file in os.listdir(temp_dir):
         pip_install_table.append("python -m pip install " + os.path.join(temp_dir, file))
 
-    dependencies_names = ["GDAL", "pyproj", "Fiona", "Shapely"]
+    dependencies_names = ["GDAL", "Fiona", "rasterio"]
     for dependency in dependencies_names:
         for item in pip_install_table:
             if dependency in item:
