@@ -42,7 +42,7 @@ def download_geopandas_dependencies(python_version, windows_bit_version, temp_di
     headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0'}
 
     whl_names = get_dependencies_links()
-    dependencies_names = ["GDAL", "pyproj", "Fiona", "Shapely"]
+    dependencies_names = ["GDAL", "Fiona", "rasterio"]
     dependencies = []
     for dep_name in dependencies_names:
         for name in whl_names:
