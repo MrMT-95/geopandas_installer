@@ -8,6 +8,10 @@ from bs4 import BeautifulSoup
 import requests
 
 
+def dependencies_to_install():
+    return ["GDAL", "Fiona", "rasterio"]
+
+
 def check_system_parameters():
     python_version = "".join(sys.version.split(" ")[0].split(".")[0:2])
     windows_bit_version = platform.architecture()[0].replace("bit", "")
@@ -42,7 +46,7 @@ def download_geopandas_dependencies(python_version, windows_bit_version, temp_di
     headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0'}
 
     whl_names = get_dependencies_links()
-    dependencies_names = ["GDAL", "Fiona", "rasterio"]
+    dependencies_names = dependencies_to_install()
     dependencies = []
     for dep_name in dependencies_names:
         for name in whl_names:
@@ -69,11 +73,8 @@ def install_wheels(temp_dir):
     for file in os.listdir(temp_dir):
         pip_install_table.append("python -m pip install " + os.path.join(temp_dir, file))
 
-    dependencies_names = ["GDAL", "Fiona", "rasterio"]
+    dependencies_names = dependencies_to_install()
     for dependency in dependencies_names:
         for item in pip_install_table:
             if dependency in item:
                 os.system(item)
-
-
-

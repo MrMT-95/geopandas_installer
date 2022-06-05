@@ -2,11 +2,12 @@ from setuptools import setup
 
 setup(
     name='geopandas_installer',
-    version='0.0.1',
+    version='0.0.2',
     packages=['geopandas_installer'],
     install_requires=["beautifulsoup4", "requests"],
     entry_points={
         'console_scripts': [
+            'dependencies_to_install=geopandas_installer:dependencies_to_install',
             'check_system_parameters=geopandas_installer:check_system_parameters',
             'temp_dir=geopandas_installer:temp_dir',
             'download_geopandas_dependencies=geopandas_installer:download_geopandas_dependencies',
