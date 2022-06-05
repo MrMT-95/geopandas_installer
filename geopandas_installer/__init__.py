@@ -9,7 +9,7 @@ import requests
 
 
 def check_system_parameters():
-    python_version = sys.version.split(" ")[0].replace(".", "")[0:2]
+    python_version = "".join(sys.version.split(" ")[0].split(".")[0:2])
     windows_bit_version = platform.architecture()[0].replace("bit", "")
 
     return python_version, windows_bit_version

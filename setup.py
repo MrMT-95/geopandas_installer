@@ -4,7 +4,7 @@ setup(
     name='geopandas_installer',
     version='0.0.1',
     packages=['geopandas_installer'],
-    install_requires=["beautifulsoup4","requests"],
+    install_requires=["beautifulsoup4", "requests"],
     entry_points={
         'console_scripts': [
             'check_system_parameters=geopandas_installer:check_system_parameters',
