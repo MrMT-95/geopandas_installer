@@ -42,7 +42,7 @@ def get_dependencies_links():
 
 
 def download_geopandas_dependencies(python_version, windows_bit_version, temp_dir):
-    website_url = 'https://download.lfd.uci.edu/pythonlibs/a4hvik9m/'
+    website_url = 'https://download.lfd.uci.edu/pythonlibs/archived/'
     headers = {'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:98.0) Gecko/20100101 Firefox/98.0'}
 
     whl_names = get_dependencies_links()
