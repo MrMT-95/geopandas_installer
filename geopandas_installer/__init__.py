@@ -15,7 +15,8 @@ def dependencies_to_install():
 def check_system_parameters():
     python_version = "".join(sys.version.split(" ")[0].split(".")[0:2])
     windows_bit_version = platform.architecture()[0].replace("bit", "")
-    print(python_version + "\n" + windows_bit_version)
+    print("python version: " + python_version )
+    print("system version: " + windows_bit_version)
     return python_version, windows_bit_version
 
 
