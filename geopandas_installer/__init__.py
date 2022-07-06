@@ -15,12 +15,14 @@ def dependencies_to_install():
 def check_system_parameters():
     python_version = "".join(sys.version.split(" ")[0].split(".")[0:2])
     windows_bit_version = platform.architecture()[0].replace("bit", "")
-
+    print(python_version + "\n" + windows_bit_version)
     return python_version, windows_bit_version
 
 
 def create_temp_folder():
-    return tempfile.mkdtemp(dir=os.path.dirname(os.path.abspath(__file__)))
+    temporary_folder = tempfile.mkdtemp(dir=os.path.dirname(os.path.abspath(__file__)))
+    print(temporary_folder)
+    return temporary_folder
 
 
 def delete_temporary_directory(temp_dir):
