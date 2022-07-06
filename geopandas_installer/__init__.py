@@ -74,6 +74,7 @@ def install_geopandas():
 def install_wheels(temp_dir):
     pip_install_table = []
     for file in os.listdir(temp_dir):
+        print("Installing: " + file)
         pip_install_table.append("python -m pip install " + os.path.join(temp_dir, file))
 
     dependencies_names = dependencies_to_install()
