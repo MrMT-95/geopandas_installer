@@ -21,7 +21,7 @@ def check_system_parameters():
 
 
 def create_temp_folder():
-    temporary_folder = tempfile.mkdtemp(dir=os.path.dirname(os.path.abspath(__file__)))
+    temporary_folder = tempfile.mkdtemp(dir=os.path.dirname(os.path.abspath(os.sep)))
     print(temporary_folder)
     return temporary_folder
 
